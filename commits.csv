@@ -1,0 +1,653 @@
+author,date,message,sha
+MichaelSun48,2024-09-13 23:43:32+00:00,"fix(custom-views): Align hover state of overflow menu with add view button (#77526)
+
+Before:
+
+
+https://github.com/user-attachments/assets/7904cd07-b5d5-4de2-8f42-a1946422b52b
+
+
+After:
+
+
+https://github.com/user-attachments/assets/068d2076-8355-4be2-822d-fc97d77289ed",75bb760e5c576722640b7a0a9f526f8d2cdff586
+scttcper,2024-09-13 23:15:10+00:00,fix(issues): Align streamlined event id (#77529),3e11dd5dcc6f8282d0c5f87591de2022ac9c5a0e
+jangjodi,2024-09-13 22:40:13+00:00,"fix(similarity): Return failure reason from multithread seer call (#77522)
+
+Return failure reason from multithread seer call in the backfill
+This allows the reason to be logged and the logic to skip projects with
+gateway timeouts
+[here](https://github.com/getsentry/sentry/blob/ff9a79b8945522173459675164ecbcd7e055405c/src/sentry/tasks/embeddings_grouping/backfill_seer_grouping_records_for_project.py#L248-L279)",d9990a2a2b10f92fdaf10ecc8e50bb221139aaa4
+scttcper,2024-09-13 22:36:17+00:00,test(performance): Rearrange trace keyboard test (#77519),b74546ef666f776a763b6be098db7e9818da0534
+mifu67,2024-09-13 22:31:06+00:00,"fix(anomaly detection): get aggregation key from snuba data (#77498)
+
+We can't assume that the aggregation key of a snuba timeseries data
+point will be `""count""`, so we should set the aggregation key when we
+see a data point with an aggregation value.",2de49ace70cc7d485d67bcdcacfaa24a3717ac73
+scttcper,2024-09-13 22:20:02+00:00,fix(ui): Remove team slug from settings search (#77520),730f6d5c3e6844f5de92ba67a850ed9447505b0f
+mrduncan,2024-09-13 22:09:50+00:00,"fix(issues): Fix incorrect API docs for statsPeriod (#77523)
+
+Endpoint: src/sentry/api/endpoints/project_group_index.py",6cc9a0bfa716d26410edd62485bfc707315e9b47
+michellewzhang,2024-09-13 22:01:29+00:00,"analytics(flags): add initial analytics (#77489)
+
+add initial analytics for the feature flag component:
+- user clicked 'view all'
+- user sorted, in both main component + drawer",5b7a948bf8bfcd530514dbe9d79455082f478dfe
+Christinarlong,2024-09-13 21:00:39+00:00,"chore(users): Move User base endpoint file to users directory (#77501)
+
+issue ref(#73856)",ff9a79b8945522173459675164ecbcd7e055405c
+isabellaenriquez,2024-09-13 20:57:34+00:00,"chore(apidocs): Fix inconsistencies in replay docs (#77506)
+
+A couple small nits to make these docs a little more consistent with the
+rest:
+- Return/Fetch -> Retrieve
+- ""Get list..."" -> ""List ...""
+- Capitalization, punctuation
+- Missing field type",3f245a1610d6fca3f4a1acd3327e7882d2bdbe6d
+isabellaenriquez,2024-09-13 20:49:20+00:00,"chore(apidocs): id -> ID (#77505)
+
+""id"" should be capitalized :) 
+
+(i was bothered)",80901d0fbb4e35399f02370102f13ca4cf424824
+scttcper,2024-09-13 20:45:35+00:00,fix(onboarding): Open replay panel in quick start action (#77516),9149a05fd9422d3b770e8e71f7d0f91b8df477f9
+mifu67,2024-09-13 20:42:27+00:00,"fix(anomaly detection): update alert list status to be the same as details page (#77500)
+
+🐸",45289810177ed721785aead0cb222db2c2834e6d
+evanpurkhiser,2024-09-13 20:41:23+00:00,"ref(js): Remove default export of DateTime (#77493)
+
+Waiting on https://github.com/getsentry/getsentry/pull/15120",776cf44d63df72ece140d46fe64013d86872d5cf
+jangjodi,2024-09-13 20:35:53+00:00,"chore(similarity): Increase seer delay and add to log (#77474)
+
+Increase seer delay between retries
+Add worker number to seer failure extra",9ee78fe90ef65e80d0e513de7b0eda3b7fa421ee
+isabellaenriquez,2024-09-13 20:30:01+00:00,"chore(apidocs): Make UserRole related endpoints private (#77504)
+
+`UserRolesEndpoint` was made private in
+https://github.com/getsentry/sentry/pull/75544, so we'll do the same for
+`UserRoleDetailsEndpoint`, `UserUserRolesEndpoint`, and
+`UserUserRoleDetailsEndpoint`.",f8089377dd8cbd30912585be34304cc83190a9d4
+MichaelSun48,2024-09-13 20:27:55+00:00,"fix(custom-views): Change cursor for tab to pointer everywhere (#77513)
+
+Changes the cursor for the tab to be `pointer` everywhere. Previously
+the cursor was `text` on the title, and pointer around it.",f6f8b60f1039eccf60d78e203866f83447703b12
+asottile-sentry,2024-09-13 19:40:22+00:00,"ref: fix test pollution integrity errors due to cache leaks between tests (#77476)
+
+this results in about a 15% failure rate:
+
+```pytest
+$ pytest --count 10 tests/sentry/event_manager/test_event_manager_grouping.py -k test_records_hash_comparison_metric
+...
+```
+
+failing with:
+
+```
+E   django.db.utils.IntegrityError: ForeignKeyViolation('insert or update on table ""sentry_environmentproject"" violates foreign key constraint ""sentry_environmentpr_environment_id_f5d02227_fk_sentry_en""\nDETAIL:  Key (environment_id)=(18) is not present in table ""sentry_environment"".\n')
+E   SQL: SET CONSTRAINTS ALL IMMEDIATE
+```
+
+I traced this down to a cache leaking from one test to another -- after
+applying this patch I had no failures in 100x runs of the tests
+
+<!-- Describe your PR here. -->",f72a7fc875fcfaf3ce2f28404e4d321ddfbbaff3
+MichaelSun48,2024-09-13 19:34:52+00:00,chore(crons): Remove sentry monitor decorator from run_escalating_forcast job (#77499),d0351f8650fa8a65c964ef3b2f935b9196d508fc
+evanpurkhiser,2024-09-13 19:17:11+00:00,ref(js): Missed one DateTime defualt export (#77497),db533da7eb443c4908f68a296b1403b4a25b7fea
+michellewzhang,2024-09-13 19:01:38+00:00,"feat(flags): hide flags from context and add feedback button (#77488)
+
+## add give feedback button:
+it wouldn't show up in the drawer for some reason so added it to the
+main component action bar:
+
+
+https://github.com/user-attachments/assets/ef3b778e-daa2-4fc1-9cad-3b93d8ad4deb
+
+## remove `flags` from the context display
+<img width=""996"" alt=""SCR-20240913-jueq""
+src=""https://github.com/user-attachments/assets/80697333-062d-41ca-800d-41529ead0112"">
+
+closes https://github.com/getsentry/sentry/issues/77399
+closes https://github.com/getsentry/sentry/issues/77160",f9db85f0ed6022c326b09e10ba5e1bdcb5a73db6
+nhsiehgit,2024-09-13 18:55:12+00:00,"publish api endpoints (#77179)
+
+per:
+https://getsentry.atlassian.net/jira/software/c/projects/ALRT/boards/214?assignee=62175b31708417006bc94fe6&selectedIssue=ALRT-220
+and
+
+https://getsentry.atlassian.net/jira/software/c/projects/ALRT/boards/214?assignee=62175b31708417006bc94fe6&selectedIssue=ALRT-221
+
+Publishes both the
+`ProjectMemberIndexEndpoint`
+and 
+`OrganizationUserTeamsEndpoint`",bb5dc590354a4c3993e0a3054d1e257e541d01cb
+evanpurkhiser,2024-09-13 18:40:24+00:00,ref(js): Remove usage of DateTime default export (#77494),aeaf0d44af1ccf6c445fea034efeb0f0622f11ea
+evanpurkhiser,2024-09-13 18:31:52+00:00,"fix(ui): Inmprove spacing on code snippet header (#77492)
+
+Before
+<img alt=""clipboard.png"" width=""1085""
+src=""https://i.imgur.com/8TmGqVt.png"" />
+
+After
+<img alt=""clipboard.png"" width=""1074""
+src=""https://i.imgur.com/H4LOaeX.png"" />",2bec7a9f95f0ca0c96f42635b29c42d681616906
+ceorourke,2024-09-13 18:28:23+00:00,"ref(alerts): Update _get_start_and_end_indices (#77449)
+
+Since we have different data formats for the `metrics_performance`
+dataset but normalize it in `format_historical_data`, we needed to
+update `_get_start_and_end_indices` to accept the formatted data so it
+works for everything.",6cef5ad70b2e13a27ff6f9fe9462a1373d20d322
+MichaelSun48,2024-09-13 18:15:48+00:00,"chore(custom-views): Add real time button back to custom views header  (#76970)
+
+As per our custom views sync on Aug 29, we are not sure if we want to
+delete real time issues as a feature just yet, so this PR adds the
+button back to the issue stream.",948f7563498b7b80f94bfbb90f95c6595b93ad06
+0Calories,2024-09-13 18:12:58+00:00,"chore(insights): Adjust copy of queries search placeholder text (#77480)
+
+Change to lower case q",df0ce4104dffc548ac5695922d971fa23c53c2e5
+0Calories,2024-09-13 18:12:50+00:00,"chore(insights): Change copy for query not found message in MongoDB queries (#77485)
+
+The SDKs currently do not capture a query source for MongoDB queries,
+this PR updates the message informing the user that the query source was
+not found, since it can be misleading.
+
+
+![image](https://github.com/user-attachments/assets/9756b4f9-f2c8-4ce4-a579-33aa71cb58e7)",7d0c6b8c0cfb7968a550ae7a1e34ab5234de1c37
+evanpurkhiser,2024-09-13 18:11:32+00:00,"feat(uptime): Add option to restrict issue creation via host id (#77435)
+
+This will allow us to disable issue creation for specific hosting
+providers using the `host_provider_id` field of the UptimeSubscription.
+
+Resolves https://github.com/getsentry/sentry/issues/76875",5d5feb724b29da580e9996ca959ba265af7d1d6d
+evanpurkhiser,2024-09-13 18:11:13+00:00,"ref(rr6): Restrict import from react-router (#77487)
+
+A few people have imported browserHistory directly from react-router,
+resulting in it not working in react router 6.",df05cc27c55f25672f2b07f7fa2f730cd0003223
+michellewzhang,2024-09-13 18:10:16+00:00,"ref(feedback): rm duplicate line (#77484)
+
+<!-- Describe your PR here. -->",4126815b2c7e70be68c7410990c44a90d43aa6c0
+jangjodi,2024-09-13 18:02:44+00:00,"ref(similarity): Add snuba exception to retry after delay in backfill (#77404)
+
+Add QueryTooManySimultaneous to exceptions that we should catch and
+retry Snuba query after a delay in similarity backfill",0bffec4d0ccc9a46b631e0bca0bebd5f4b396e58
+evanpurkhiser,2024-09-13 18:01:54+00:00,feat(rr6): Add reactRouterVersion to 'Route Not Found' errors (#77482),b85a48e504735bc2a04714759d26771b34005aeb
+evanpurkhiser,2024-09-13 18:01:45+00:00,"ref(uptime): Improve rdap data entity usage (#77436)
+
+- Use the handle as the network name. The ""Network Name"" attribute of
+   the network may not always exist.
+
+ - Handle cases where there is no vCard array present in the first
+   entity.",8922d04489e0d9cb96f1e2f04dff25c15628b877
+evanpurkhiser,2024-09-13 18:01:31+00:00,"ref(uptime): Remove old whois columns (db) (#77434)
+
+Requires https://github.com/getsentry/sentry/pull/77427 to be deployed
+first",b3c749706dd22a610823e9f004e5876e279e3756
+cathteng,2024-09-13 18:01:09+00:00,ref(scm): move create_or_update_comment into CommitContextIntegration (#76761),cabc6aa9ed44648f2088acac9ee18f2f572bd67d
+asottile-sentry,2024-09-13 17:41:20+00:00,"ref: fix process consumer test (#77483)
+
+this test always fails when run by itself (due to positive pollution
+from other tests in the file populating the global cache):
+
+```console
+$ pytest -q tests/sentry/spans/consumers/process/test_factory.py -k test_consumer_pushes_to_redis
+F                                                                            [100%]
+===================================== FAILURES =====================================
+__________________________ test_consumer_pushes_to_redis ___________________________
+tests/sentry/spans/consumers/process/test_factory.py:122: in test_consumer_pushes_to_redis
+    assert redis_client.lrange(""segment:a49b42af9fb69da0:1:process-segment"", 0, -1) == [
+E   assert [] == [b'{""descript...c7d4e3ee2a""}']
+E     
+E     Right contains 2 more items, first extra item: b'{""description"":""OrganizationNPlusOne"",""duration_ms"":107,""event_id"":""61ccae71d70f45bb9b1f2ccb7f7a49ec"",""exclusive_tim...imestamp_precise""
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show
+============================= short test summary info ==============================
+FAILED tests/sentry/spans/consumers/process/test_factory.py::test_consumer_pushes_to_redis - assert [] == [b'{""descript...c7d4e3ee2a""}']
+1 failed, 8 deselected in 0.25s
+```
+
+<!-- Describe your PR here. -->",f0833a312bb6ee0038d21bfcd70f15789129a36f
+GabeVillalobos,2024-09-13 17:36:41+00:00,fix(jira): Ensures metrics/logs are captured for all issue creation exceptions (#77412),4414ed80028f838fc08de5c80c4df7b936b998b4
+Zylphrex,2024-09-13 17:28:34+00:00,chore(deps): Bump sentry-protos to 0.1.21 (#77473),02593367212e319d234bf0a0da0b01e9eccc863d
+michellewzhang,2024-09-13 17:27:21+00:00,"feat(issues/flags): add ui for feature flag table in event details (#77218)
+
+### Feature Flag UI
+- Adds a feature flag UI component in event details (under a feature
+flag, only visible to sentry orgs) showing a list of the organization's
+evaluated feature flags. This component sits below the event contexts.
+- The default sort order is evaluation order. The component shows a max
+of 10 rows & 2 columns.
+- `View All` opens up a drawer similar to the breadcrumbs drawer,
+showing all feature flags w/ ability to sort & search.
+
+### Followup
+- Will add a feedback button in a followup PR
+([ticket](https://github.com/getsentry/sentry/issues/77399))
+- Will add analytics in a followup PR
+
+With real data:
+
+![SCR-20240912-kpjn](https://github.com/user-attachments/assets/50f064d5-ea21-482a-aad4-a2b7c0051266)
+
+
+With more robust fake data:
+
+
+https://github.com/user-attachments/assets/f4556288-7b13-4afc-88de-df15a3999830
+
+With 1 column of flags:
+<img width=""1009"" alt=""SCR-20240912-jjct""
+src=""https://github.com/user-attachments/assets/641f0851-2f68-4af3-af36-ccb47c4d7775"">
+
+
+
+
+
+-
+[Figma](https://www.figma.com/design/oTVOd3RGUSZWYGwTpGjeGK/Specs%3A-Feature-Flag-List-in-Issue-Details?node-id=212-1627&node-type=canvas&t=DGQBOPYIbvPzXy2R-0)
+- Relates to https://github.com/getsentry/sentry/issues/77160",1619a77aa0301771c7cb4df8cda764ad50f6cf82
+asottile-sentry,2024-09-13 17:22:09+00:00,"ref: fix test pollution in test_rdap (#77481)
+
+`test_resolve_rdap_provider` would always fail when run on its own -- it
+was relying on positive pollution from
+`test_resolve_rdap_bootstrap_registry` which mutated the global django
+`cache`:
+
+```console
+$ pytest -q tests/sentry/uptime/detectors/test_rdap.py -k test_resolve_rdap_provider 
+F                                                                            [100%]
+===================================== FAILURES =====================================
+____________________________ test_resolve_rdap_provider ____________________________
+tests/sentry/uptime/detectors/test_rdap.py:103: in test_resolve_rdap_provider
+    assert resolve_rdap_provider(""1.10.20.30"") == ""https://rdap.example.net/rdap/""
+E   AssertionError: assert 'https://rdap.apnic.net/' == 'https://rdap...ple.net/rdap/'
+E     
+E     - https://rdap.example.net/rdap/
+E     ?              -- - ^^     -----
+E     + https://rdap.apnic.net/
+E     ?                ^^^
+============================= short test summary info ==============================
+FAILED tests/sentry/uptime/detectors/test_rdap.py::test_resolve_rdap_provider - AssertionError: assert 'https://rdap.apnic.net/' == 'https://rdap...ple.net/rdap/'
+1 failed, 2 deselected in 0.32s
+
+```
+
+<!-- Describe your PR here. -->",39b533cbc9f03e7649765b52dd20077c8735cab6
+edwardgou-sentry,2024-09-13 17:16:39+00:00,"feat(discover): Adds sum min and max to gauge metrics in discover (#77475)
+
+Add sum min and max functions to discover metrics dataset for gauge
+metrics",622850daeecacfc3e752a901b1e9f971a5df3a95
+nhsiehgit,2024-09-13 17:03:44+00:00,"update incident activity string for dynamic alerts (#77331)
+
+NOTE:
+
+Comparison detection types are labeled ""percent"" currently
+Crash Free rates are 'percent' (or may become 'percent' soon) because
+the values they are comparing are _percents_ - however we are _not_
+comparing a _percent change_. instead Crash free rates are comparing
+static values that happen to be ""percent values""
+
+so for now - we check whether there's a comparison delta and whether the
+type is dynamic or not
+
+![Screenshot 2024-09-12 at 4 22
+28 PM](https://github.com/user-attachments/assets/13d0b928-fc62-4795-8398-2b3562148a87)",a2b9b6e9ecfa68378b5fa6297b743f1b06bfb393
+michellewzhang,2024-09-13 17:02:30+00:00,"ref(feedback): add user.email tag to issue platform event (#77352)
+
+fixes https://github.com/getsentry/sentry/issues/77333
+
+- adds `user.email` as a tag on the `event`, since it wasn't there
+before. context for this change is we want to be able to display
+`user.email` on the feedback UI as a tag, as well as be able to write
+alert conditions on it",a7ab09ccd8b234fdd9f81751423c22db57505529
+malwilley,2024-09-13 16:58:02+00:00,fix(query-builder): Better positioning and loading state for value suggestion menu (#77359),d9451ea1072e2401e54d364eeea43b9fe6b65804
+mifu67,2024-09-13 16:47:30+00:00,"fix(alerts): properly expose validation errors (#77335)
+
+The logic as it was was leading to some validation errors being exposed
+as undefined. Open to better solutions to check for timeout errors
+(which are something like `[{""message"": ""timeout occurred"", ""status"":
+408}]`.",f5b83e418617da9f9ff77e370ee0d19f0acad2d4
+mifu67,2024-09-13 16:20:30+00:00,"fix(anomaly detection): set resolution == time_window (#77364)
+
+Set update frequency to be the same as time window for anomaly detection
+alerts, as requested by the Seer team.",f0ef996672bae248285ac96a60274a4536d07009
+mifu67,2024-09-13 16:19:31+00:00,"fix(anomaly detection): add insights metrics to allow list (#77455)
+
+I am a fool.",fa15abc79427450fc50af241f500fce7004d34c5
+armenzg,2024-09-13 15:55:32+00:00,ref(grouping): Revert get_primary_hash to original code (#77330),bb58a00af3c8cc8ba7650466009080416bad0b3a
+c298lee,2024-09-13 15:42:57+00:00,"feat(replay): Replay web vitals tooltip (#77437)
+
+Adds a tooltip beside each web vital type to provide information about
+what each web vital type is. Also removes FID since Google no longer
+supports it.
+
+Closes https://github.com/getsentry/sentry/issues/77409",10742091988f7e2e1075773d7cce540a7937964f
+oioki,2024-09-13 14:22:40+00:00,"cleanup: delete unused social-identities endpoints (#77231)
+
+The last usage of `/social-identities/` endpoints was removed in
+https://github.com/getsentry/sentry/pull/29230, 3 years ago.",6b96e8f0c484876f8d5cf59ed1cd9d84d5d860a1
+Zylphrex,2024-09-13 14:18:04+00:00,"fix(explore): Allow deleting last selected group by (#77451)
+
+When there's 1 group by left, the delete button just sets it to none
+instead of actually deleting the last dropdown item.",9391f219bc87ab1508e8926ea68d5662f6675fea
+shruthilayaj,2024-09-13 14:05:33+00:00,"chore(discover): Swallow invalid query errors (#77465)
+
+If it's an Invalid search query, just set to error",bd5021101575bc23fb008efa913bf2dda5318078
+asottile-sentry,2024-09-13 13:34:05+00:00,"ref: make silo_mode parametrize determinstic (#77438)
+
+chasing down why pytest 8.2 seems to break our testsuite _sometimes_
+
+this fixes one of the differences in setup plan between the two but I
+don't think this is the problem
+
+<!-- Describe your PR here. -->",35f57742d80bbacbc0c4e9c17ef07f610aa3dd53
+loewenheim,2024-09-13 11:29:59+00:00,"deps: Symbolic 12.8.0 -> 12.10.0 (#77383)
+
+In particular, this pulls in
+https://github.com/getsentry/symbolic/pull/853.
+
+Fixes https://github.com/getsentry/sentry/issues/76857.",5344837ccba67d641e38ef54ba1254015bf1b7e5
+ArthurKnaus,2024-09-13 09:14:35+00:00,"feat(angular-onboarding): Add standalone app docs (#77302)
+
+Add platform option to `javascript-angular` that allows to switch
+between standalone / module app initialization.
+
+Closes https://github.com/getsentry/sentry/issues/77134",cd5b45a76d3dc0c7e9011fb14a10abcbc1076217
+priscilawebdev,2024-09-13 09:04:01+00:00,ref(whats-new): Remove green badge (#77461),5ad0ace462463c17bb5f6da674d6e5f45a9eadd4
+scttcper,2024-09-12 22:02:54+00:00,feat(issues): Scroll to current transaction in trace preview (#77262),6a038e4625f906ed58f0b95d3b3a2ed279d637f0
+MichaelSun48,2024-09-12 21:49:53+00:00,"fix(custom-views): Fixes page filters getting reset when naving to issues/ (#77447)
+
+Fixes page filters getting reset whenever naving to `issues/` or when
+clicking `issues` in the sidebar",2cd4bb74328e185b34f8a1d1a709d0bbe3f4bc7b
+cathteng,2024-09-12 21:29:28+00:00,chore(sentry-apps): log timed out url (#77440),8bbc9e23217e5a15afa58b4525774d03eb1ff091
+scttcper,2024-09-12 21:27:09+00:00,feat(issues): Add lil icons to error event level (#77117),ab20413080213a4446fb1b92f9ffb45703d33ad3
+0Calories,2024-09-12 21:12:02+00:00,"fix(insights): Queries module page filters did not include `span.system` (#77349)
+
+Fixes an issue where the action (command) and domain (table) selectors
+in the DB module were not including the currently selected database
+system. With this change, the options for these page filters will only
+show DB commands and tables that are valid for the currently selected
+database system.
+
+---------
+
+Co-authored-by: Matt Quinn <matt.quinn@sentry.io>",9a29b04f770c91279a26fee5235cd00c13129ac2
+elijames-codecov,2024-09-12 21:00:22+00:00,"Update alerts.html (#77415)
+
+<!-- Describe your PR here. -->
+Update login banner to promote our Sept 24 workshop
+<!--
+
+  Sentry employees and contractors can delete or ignore the following.
+
+-->
+
+### Legal Boilerplate
+
+Look, I get it. The entity doing business as ""Sentry"" was incorporated
+in the State of Delaware in 2015 as Functional Software, Inc. and is
+gonna need some rights from me in order to utilize my contributions in
+this here PR. So here's the deal: I retain all rights, title and
+interest in and to my contributions, and by keeping this boilerplate
+intact I confirm that Sentry can use, modify, copy, and redistribute my
+contributions, under Sentry's choice of terms.",eca2842534b65e87590cc02f33047845e17be100
+evanpurkhiser,2024-09-12 20:59:46+00:00,ref(py): Make withs in test_results_consumers easier to read (#77433),05f12fe31481af132fb258af051b75cf91d3fecf
+oioki,2024-09-12 20:45:21+00:00,"fix(integrations): restore `code` for sentryapp installation webhooks (#77403)
+
+Fixes https://github.com/getsentry/sentry/issues/76903
+The issue was introduced in
+https://github.com/getsentry/sentry/pull/71551",2c168453e1c2356cf525c73a543e378d660a3087
+evanpurkhiser,2024-09-12 20:32:47+00:00,"fix(rr6): Correct onboarding route specificity (#77418)
+
+In react-router 6 routes are no longer matched based on the order
+they're defined, and instead are matched on how specific their segments
+are. You can read more about this here [0]
+
+This fixes the onboarding routes so they correctly match in 6 and 3.
+
+[0]:
+https://reactrouter.com/en/main/start/overview#ranked-route-matching",89f80497333058d52f3fb73c4712607f92b851db
+evanpurkhiser,2024-09-12 20:24:14+00:00,ref(uptime): Remove old whois columns (state) (#77427),18c528ee7997c033ac63d7efd403b9ffa01da9ca
+evanpurkhiser,2024-09-12 19:41:55+00:00,feat(uptime): Better names for uptme rdap columns (#77424),0aff0554b16d0485217169eb6afa93fb60ae996b
+edwardgou-sentry,2024-09-12 19:19:30+00:00,feat(alerts):Moves Insight Metric alert option into the Performance category (#77354),178d1606f0df972e51cc17303955ca82bdb4ec50
+edwardgou-sentry,2024-09-12 19:19:18+00:00,"fix(alerts): Checks the alert rule to ensure it is not an insights alert before displaying the metrics beta end banner (#77353)
+
+Updates the Alert Rule detail page to check that the alert is not an
+Insights Alert before displaying the Metrics Beta end banner",c555d420ec4adf445229ac91f9383aab9ab9c749
+markstory,2024-09-12 19:15:50+00:00,"chore: Remove spans used to debug ratelimit overhead (#77395)
+
+With the source of overhead in ratelimit middleware tracked down (it was
+metrics initialization locks) we don't need these spans anymore.",24b6b219eee1a2c23da38048b547080b27f9e88c
+evanpurkhiser,2024-09-12 19:10:40+00:00,ref(js): Remove new legacy react-router import (#77421),88421f62092336332eb45c78c310aba71dfb0b4d
+wmak,2024-09-12 19:05:27+00:00,"fix(spans): Convert sampling weight to uint64 (#77417)
+
+- Convert the sampling_weight column back to a uint64 so we can use it
+in the quantileTDigestWeighted function, all the other functions don't
+care haha, sampling_weight2 is already uint64, but we aren't currently
+writing data to it, and it won't have data for 90d",7b085721705aaaefdd9231a9bb8a91ebadb8fbdc
+wmak,2024-09-12 19:04:17+00:00,"feat(spans): add span_id field (#77416)
+
+- This wasn't added originally cause the thought was that we had an id
+field we could use, unfortunately because we currently have the ability
+to flip between eap and indexed spans we still need to support this
+field fow the explore views
+  - maybe one day we can drop it",dd5b9331216fa1180c036e5c5cb4f1844aff61fc
+malwilley,2024-09-12 19:03:11+00:00,"feat(query-builder): Add unsubmitted search indicator (#77411)
+
+Adds an indicator to the search icon when the internal search state does
+not match the actual query state (`initialQuery`):
+
+This is configured using `showUnsubmittedIndicator`, which I've added to
+all uses of the search bar which require you to press enter to search.",312f0d6c4f732ee361faca9d0c9e7ac66dbd0d53
+evanpurkhiser,2024-09-12 18:57:33+00:00,"feat(rr6): Parameter redirect to path (#77419)
+
+This fixes react router 6 redirects, since before this routes that had
+parameters would not correctly redirect.",061fb6811cb4f5349d7a18114607f8a6ef77af68
+mrduncan,2024-09-12 18:56:27+00:00,"chore(issues): Remove feedback button from highlights (#77414)
+
+This feature has been GA for a while now and we're occasionally seeing
+users confuse it with issue activity thinking it'll be visible to their
+other team members.",f1abae8c5ca4ce2d50c96857230a23ec85c1a13a
+Abdkhan14,2024-09-12 18:39:16+00:00,"feat(explore-chart): Making chart display type, specific to each chart. (#77369)
+
+<img width=""1278"" alt=""Screenshot 2024-09-11 at 8 32 05 PM""
+src=""https://github.com/user-attachments/assets/837c432f-5141-46c7-8c46-79433557a29a"">
+
+---------
+
+Co-authored-by: Abdullah Khan <abdullahkhan@PG9Y57YDXQ.local>",a662b8dad3fd142bc8a9f1ccf6e7557c2c5c7b3d
+gggritso,2024-09-12 18:37:49+00:00,"chore(dashboards): Reduce `AutoSizedText` iteration limit (#77401)
+
+Not very important, but 50 is a _hugely_ generous limit. In the wild,
+pretty much _every_ component converges in 6 iterations. 8 is rare. I'm
+setting 20, just to give it headroom. 50 is bonkers.
+
+You can see for yourself: https://sentry.sentry.io/dashboard/106138/",aab9ea25009e1046eb114b08277892cdbd77f3ae
+edwardgou-sentry,2024-09-12 18:19:09+00:00,"fix(insights): Fixes alerts serializer failing for some insights functions with special arguments (#77343)
+
+Some Insights functions have use special arguments that do not pass the
+existing column argument validation. For example `http_response_rate(3)`
+fails because `3` is not a valid measurement, supported column, or mri,
+etc.
+
+This change adds a mapping of Insights functions and their arguments for
+the alerts serializer to check against, so that these Insights functions
+no longer fail when valid.",2bb4d9349f18fe7e6fc94a57ba375e2f5bb86b96
+davidenwang,2024-09-12 18:16:08+00:00,"fix(uptime): Fix downtime duration calculation from activity (#77048)
+
+A couple things were wrong here from before:
+
+1. The activity is sorted in descending order by timestamp so I should
+be using `.find` not `.findLast`.
+2. I also forgot to account for the regression activity which is the one
+that would automatically be created when a new uptime event is added to
+the uptime issue.",b9006dff0ee0f51039eafba0b7f065042cb83b3b
+davidenwang,2024-09-12 18:15:55+00:00,"ref(crons): Simplify MonitorBucketData type (#77255)
+
+Clearing out this old TODO from myself
+
+Don't really need this `MonitorBucketData` type as its longer to input
+than `MonitorBucket[]` and adds a layer of opaqueness to what the type
+actually represents.",9b8be2ea843fcfabad10cc28ce16e4b016bd32b4
+asottile-sentry,2024-09-12 18:15:44+00:00,"ref: upgrade djangorestframework-stubs (#77392)
+
+<!-- Describe your PR here. -->",bde433525e388223043ad6d26f574fa1497ab844
+cathteng,2024-09-12 18:02:38+00:00,chore(sentry-apps): add instrumentation for sentry-app-components endpoint (#77405),f10335ea5c87f2d30236a406706af05041b6cecb
+saponifi3d,2024-09-12 17:58:55+00:00,"Alerts Create Issues: Workflow Actions (#77361)
+
+## Description
+Spec:
+https://www.notion.so/sentry/Alerts-Create-Issues-9114a498098143178839d584c293fe75?pvs=4#8675cde09f734e9cb86f8b1a45e459fc
+
+This is a little different from the spec, breaking the `type` and the
+`data` apart. From here, we can use a factory pattern to execute the
+different workflow actions.
+
+Each action will have a schema it defines for the data properties as
+well, this will allow us to enforce a light schema in the future.
+Support will be added for the json schema definitions when we start to
+fill in the base abstraction for the workflow actions.",36641ae2189b8282000428246844867677b97616
+harshithadurai,2024-09-12 17:46:39+00:00,"fix(dashboards): make card headings bold (#77408)
+
+fixes https://github.com/getsentry/sentry/issues/77394
+
+---------
+
+Co-authored-by: harshithadurai <harshi.durai@esentry.io>",92695556322a539ea682c352c2238148be02137d
+malwilley,2024-09-12 17:28:23+00:00,"feat(query-builder): Increase area between trigger and overlay (#77371)
+
+Tiny change to give the menu a few pixels of separation from the search
+box",b71774954a063b1db27fe29083c110f8d758d1f7
+ceorourke,2024-09-12 17:17:55+00:00,"fix(alerts): Fix dataset label for performance metric alerts (#77366)
+
+Locally the dataset for performance metric alerts is `transactions` but
+in production it's being set as `generic_metrics` which isn't a key in
+the dictionary, so we have to rename it.
+
+Fixes https://getsentry.atlassian.net/browse/ALRT-265",06f6f3e6e71ef43efabde27e905e583939f2f7e6
+malwilley,2024-09-12 17:13:51+00:00,"feat(query-builder): Add wildcard matching text to value menu footer (#77363)
+
+Will show this helper text for any string filter that is not explicitly
+disallowed. Added an option to the field definition to do this, and went
+ahead and disallowed for all the filters I tested that did not allow
+wildcards (most of the issue filters).",68f20ba8c45e96faa3eefe2831082e36634d92de
+malwilley,2024-09-12 17:08:52+00:00,"feat(custom-views): Add tabs to a menu when they overflow (#77317)
+
+When there are too many tabs to display in the tab bar, removes them and
+appends to an overflow menu.",1f978f77d7c8abda9baa0a1732419f6177d26fad
+ceorourke,2024-09-12 16:35:15+00:00,"fix(alerts): Fix KeyError on AlertRuleThresholdType (#77360)
+
+We only read the `alert_operator` and `resolve_operator` for non-anomaly
+detection alerts (and only anomaly detection alerts would have above and
+below), so only set these if there are no `potential_anomalies`.
+
+Fixes https://getsentry.atlassian.net/browse/ALRT-266
+Closes SENTRY-3DSY",3e0482c167a02a103b64f3313abf9a1cc58e8d15
+MichaelSun48,2024-09-12 16:09:34+00:00,"feat(custom-views): Implement ""Add View"" flow to custom views (#77127)
+
+This PR implements an add view flow for custom views. Previously, as a
+stop gap solution, clicking ""Add View"" would simply duplicate the query
+and sort of the currently selected tab to the new tab. Now, clicking
+""Add View"" creates a tab with a blank query, and a new page containing
+recommended searches, and any saved searches the user created before
+custom-views.
+
+While this feature's design mostly sticks to the mockups, several
+important changes have been made. These are:
+
+1. **There is no option to delete Saved Searches.** This was done
+because it feels unnecessary to allow the user to permanently delete
+their saved searches when the feature itself will be deprecated soon
+anyways.
+2. **The banner at the top of the page is no longer dismissible.** This
+was done because it is the only place that explains that views are
+user-scoped. This will likely change post-LA.
+3. **The button within the banner is now a feedback button, rather than
+a ""Read Docs"" button.** This was done because, well, there are no docs
+for custom views yet since it's not even EA'd yet.
+4. ~**Added more left-padding to the search suggestion title.** In the
+mockups, the row container bled outside of the parent container's left
+border. I added a little bit more left padding as a replacement for this
+effect.~ Reverted after chatting with Vu
+
+Other considerations that came up as I was creating this: 
+
+* Saved searches currently do not show saved searches created by the
+user that are organization scoped (visibility=“organization”). This is
+because the endpoint does not appear to send the owner_id of a saved
+search back to the frontend currently. Do we want to show those as well?
+* I copied over the ""Recommended Searches"" from the designs, but perhaps
+there are other searches we could recommend as a discovery function?
+(possibly consult Josh Ferge for this)
+* Saved searches also store a sort. Do we want to display that anywhere?
+
+<img width=""1099"" alt=""image""
+src=""https://github.com/user-attachments/assets/01b37208-cd31-45f4-8fde-5babd6ea584e"">
+
+
+Todo:
+- [x] Add sparkles ✨
+- [x] Move interactionstatelayer inset -1",426a5356a1fdf3f1ba2cb893cb846b60eb2ac8a5
+c298lee,2024-09-12 16:01:13+00:00,"fix(replay): CLS score is not in ms (#77397)
+
+If the web vital is CLS, don't include `ms`. CLS is the only web vital
+in replays that isn't measured in milliseconds.
+
+Relates to https://github.com/getsentry/sentry/issues/69881",631e48a508a36f5e17e3d1d524bdc0c2b5fc01ac
+Zylphrex,2024-09-12 15:52:26+00:00,"fix(explore): No event id on EAP (#77398)
+
+This makes it so the trace view at least loads. It does not work with
+the span linking yet but we're working on how to make this work.",c7f0d9fd482e32ef623bb0a891b1556147a9e124
+shruthilayaj,2024-09-12 15:22:25+00:00,"feat(dashboards): Add split task for dashboards (#77368)
+
+The split function for dashboards is very similar to discover, calling a
+lot of the functions in dataset_split.py.
+1. Checks if explicit error or transaction query based on query fields
+2. If org has dynamic sampling feature and it's a metrics compatible
+query, set to transactions (this is different from discover) this is so
+any queries that display metrics data from MEP stay that way
+3. If errors data, set to errors
+4. If no errors data but has transaction data, set to transaction
+5. If no errors or transactions, set to errors",9f6a11a17a953b215db990393ec51fff55c8b26c
+edwardgou-sentry,2024-09-12 15:21:39+00:00,"feat(insights): update webvitals query filter to permit cls spans (#77272)
+
+Quick update to also allow cls spans to get through webvitals filters",771548400086e348781a8400f55104d195a7d4f3
+cmanallen,2024-09-12 15:02:38+00:00,fix(flags): Wrap flags in an object (#77390),b175290c60339df8189fb5c210720b29c2c7f149
+gggritso,2024-09-12 14:59:41+00:00,"fix(dashboards): Use custom cell renderer in `DiscoverTable` (#77393)
+
+Closes https://github.com/getsentry/sentry/issues/76731. The issue is
+caused by using different renderer strategies. The renderer for the
+_small_ table (the widget's normal view) is using `SimpleTableChart`
+which correctly delegates the rendering of special fields to the
+relevant dataset's `getCustomFieldRenderer` configuration. The
+full-screen modal uses the `DiscoverTable` component, which sets up the
+custom renderers differently. There, the custom renderers do _not_ use
+the linkifying logic from the table.
+
+This PR ensures that Discover and Discover-ish datasets import and use
+the same field renderers. Longer-term the solution would be to move this
+logic to the _default_ field renderers or otherwise unify the renderers
+used in Dashboards but for now this fixes the issue.",e633ad84b6cd060a32d79f324d03c751996a2968
+Zylphrex,2024-09-12 14:31:47+00:00,"fix(trace-view): Fix continuous profile url (#77362)
+
+Co-authored-by: Jonas <jonas.badalic@sentry.io>",169dda4329649de424f7fc5ed6ef3895b4ee7a46
+nikkikapadia,2024-09-12 14:28:59+00:00,"fix(dashboards): Adjust decimal points for percentage on dashboard line graph widgets (#77336)
+
+<!-- Describe your PR here. -->
+
+Fixes [this issue](https://github.com/getsentry/sentry/issues/57352)
+where percentage does not show on line charts y axes when the max
+percentage is <1.0%. This was fixed by increasing the amount of decimal
+places we are able to show for percentage values on the y axis of line
+charts.
+
+Before: 
+
+![image](https://github.com/user-attachments/assets/90a06477-afd9-4b6c-9a84-92d2e5692ede)
+
+After:
+
+![image](https://github.com/user-attachments/assets/7a826da5-f7e7-4915-94bb-19657d3994c6)
+
+<!--
+
+  Sentry employees and contractors can delete or ignore the following.
+
+-->",2a548e4c22605a83a762a220d752e4d2826948a4

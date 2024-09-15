@@ -1,0 +1,111 @@
+pr_title,reviewer,submitted_at,state,body
+feat(uptime): Fetch rdap after subscription creation,evanpurkhiser,2024-09-14 00:35:01+00:00,COMMENTED,
+feat(flags): attach flags in sentry's frontend to events,michellewzhang,2024-09-14 15:23:05+00:00,COMMENTED,
+fix(issues): Align streamlined event id,JoshFerge,2024-09-13 23:00:50+00:00,APPROVED,
+chore(issues): Move issues endpoints to issues,JoshFerge,2024-09-13 23:42:05+00:00,APPROVED,
+fix(custom-views): Align hover state of overflow menu with add view button,scttcper,2024-09-13 22:54:07+00:00,APPROVED,
+fix(issues): Fix incorrect API docs for statsPeriod,JoshFerge,2024-09-13 22:05:44+00:00,APPROVED,
+fix(issues): Fix incorrect API docs for statsPeriod,schew2381,2024-09-13 22:06:02+00:00,APPROVED,
+fix(similarity): Return failure reason from multithread seer call,JoshFerge,2024-09-13 21:54:15+00:00,APPROVED,
+fix(ui): Remove team slug from settings search,michellewzhang,2024-09-13 21:46:51+00:00,APPROVED,
+test(performance): Rearrange trace keyboard test,evanpurkhiser,2024-09-13 21:09:24+00:00,APPROVED,
+feat(uptime): Add fetch_subscription_rdap_info task,evanpurkhiser,2024-09-13 21:07:09+00:00,COMMENTED,
+fix(onboarding): Open replay panel in quick start action,evanpurkhiser,2024-09-13 20:24:31+00:00,APPROVED,
+ref(feedback): disallow shimming reports w/missing event,JoshFerge,2024-09-13 20:24:02+00:00,COMMENTED,"we used to use this but found when you create user reports with no environment, etc. it does not work well. i'd advocate for simply removing this codepath"
+fix(query-builder): Stop text from being overwritten when pasting,JoshFerge,2024-09-13 20:17:17+00:00,APPROVED,
+fix(custom-views): Change cursor for tab to pointer everywhere,JoshFerge,2024-09-13 20:16:12+00:00,APPROVED,
+ref: add warmup to wsgi,asottile-sentry,2024-09-13 20:12:45+00:00,COMMENTED,
+feat(eap): Use RPC to fetch tag values,wmak,2024-09-13 20:19:38+00:00,APPROVED,"nit: around referrer name, comments, lgtm otherwise"
+feat(replays): Pack video and recording data into the same payload,bruno-garcia,2024-09-13 20:24:28+00:00,COMMENTED,
+chore(apidocs): Fix inconsistencies in replay docs,michellewzhang,2024-09-13 20:53:20+00:00,APPROVED,
+chore(apidocs): id -> ID,iamrajjoshi,2024-09-13 19:50:00+00:00,APPROVED,![Squish LGTM](https://media3.giphy.com/media/PYS9of5NOhSGZ7HPpE/giphy.gif?cid=47028fa8sx12d824xrvy8zo8bq3w00f23hoj11gqqzus7q0f&ep=v1_gifs&rid=giphy.gif&ct=g)
+chore(apidocs): Make UserRole related endpoints private,iamrajjoshi,2024-09-13 19:44:52+00:00,APPROVED,`UserUserRoleDetailsEndpoint` lol
+:wrench: chore(discord): Remove validate user Option,cathteng,2024-09-13 19:23:00+00:00,APPROVED,
+chore(users): Move User base endpoint file to users directory,Christinarlong,2024-09-13 19:03:56+00:00,COMMENTED,
+fix(anomaly detection): update alert list status to be the same as details page,ceorourke,2024-09-13 20:25:55+00:00,APPROVED,
+chore(crons): Remove sentry monitor decorator from run_escalating_forecast job,mrduncan,2024-09-13 19:02:49+00:00,APPROVED,
+fix(anomaly detection): get aggregation key from snuba data,ceorourke,2024-09-13 20:25:45+00:00,COMMENTED,
+ref(js): Missed one DateTime defualt export,billyvg,2024-09-13 18:54:27+00:00,APPROVED,
+drop(grouping): A few more post-hierarchical code removals,armenzg,2024-09-13 18:35:55+00:00,COMMENTED,
+ref(js): Remove usage of DateTime default export,billyvg,2024-09-13 18:31:47+00:00,APPROVED,
+ref(js): Remove default export of DateTime,billyvg,2024-09-13 18:23:11+00:00,APPROVED,
+fix(ui): Inmprove spacing on code snippet header,michellewzhang,2024-09-13 18:23:05+00:00,APPROVED,
+feat(auth): add org level api access,markstory,2024-09-13 18:33:47+00:00,COMMENTED,
+typing(grouping): Add more modules into stronger typing,asottile-sentry,2024-09-13 19:20:58+00:00,APPROVED,"
+
+![](https://i.fluffy.cc/45zQ34w0KwWXsgh0KM4g5qZ4vjRj0xw2.gif)"
+analytics(flags): add initial analytics,jas-kas,2024-09-13 18:40:13+00:00,APPROVED,
+feat(flags): hide flags from context and add feedback button,billyvg,2024-09-13 18:17:02+00:00,APPROVED,
+ref(rr6): Restrict import from react-router,michellewzhang,2024-09-13 17:54:56+00:00,APPROVED,
+feat(query-builder): Allow keys to be edited,scttcper,2024-09-13 23:08:31+00:00,APPROVED,
+chore(insights): Change copy for query not found message in MongoDB queries,mjq,2024-09-13 18:05:38+00:00,APPROVED,
+ref(feedback): rm duplicate line,JoshFerge,2024-09-13 17:22:53+00:00,APPROVED,
+ref: fix process consumer test,shruthilayaj,2024-09-13 17:05:16+00:00,APPROVED,
+feat(rr6): Add reactRouterVersion to 'Route Not Found' errors,bruno-garcia,2024-09-13 16:54:06+00:00,APPROVED,"This helps, but actually could we (maybe another PR) change fingerprinting?
+
+How about we finterprint like: `""route-not-found"" + scope.transaction` (where transactions should be the parameterized URL)?
+
+We can have alerts then for different teams to handle their own?"
+ref: fix test pollution in test_rdap,evanpurkhiser,2024-09-13 17:21:45+00:00,APPROVED,
+chore(insights): Adjust copy of queries search placeholder text,mjq,2024-09-13 18:05:49+00:00,APPROVED,
+chore: Move deletion tasks to be co-located with the rest of deletions,markstory,2024-09-13 16:11:54+00:00,COMMENTED,
+ref: fix test pollution integrity errors due to cache leaks between tests,joshuarli,2024-09-13 19:40:21+00:00,APPROVED,
+feat(discover): Adds sum min and max to gauge metrics in discover,shruthilayaj,2024-09-13 16:01:28+00:00,APPROVED,
+chore(similarity): Increase seer delay and add to log,mrduncan,2024-09-13 17:10:17+00:00,APPROVED,
+chore(deps): Bump sentry-protos to 0.1.21,colin-sentry,2024-09-13 17:27:47+00:00,APPROVED,
+feat(link-utils): Add validate link exists function,ryan953,2024-09-13 16:07:07+00:00,COMMENTED,
+feat(hook): Introduce useHasMounted hook,priscilawebdev,2024-09-13 12:44:16+00:00,COMMENTED,
+chore(discover): Swallow invalid query errors,edwardgou-sentry,2024-09-13 14:05:11+00:00,APPROVED,
+ref(whats-new): Move the logic to update internal seen state,priscilawebdev,2024-09-13 11:41:45+00:00,COMMENTED,
+ref(whats-new): Remove green badge,priscilawebdev,2024-09-13 08:49:38+00:00,COMMENTED,
+fix(anomaly detection): add insights metrics to allow list,schew2381,2024-09-13 00:00:37+00:00,APPROVED,
+ref(integrations): Extract dialog helper class from SlackActionEndpoint,RyanSkonnord,2024-09-12 23:13:17+00:00,COMMENTED,
+fix(releases): use get_or_create instead of sub transaction,snigdhas,2024-09-12 22:52:15+00:00,APPROVED,
+ref(alerts): Remove usage of <Teams> in favor of useUserTeams(),evanpurkhiser,2024-09-13 21:04:52+00:00,APPROVED,
+fix(explore): Allow deleting last selected group by,Abdkhan14,2024-09-12 22:48:50+00:00,APPROVED,
+ref(alerts): Convert create.tsx to FC,evanpurkhiser,2024-09-13 21:04:41+00:00,APPROVED,
+ref(alerts): Update _get_start_and_end_indices,mifu67,2024-09-12 21:58:42+00:00,APPROVED,
+fix(custom-views): Fixes page filters getting reset when naving to issues/,scttcper,2024-09-12 21:43:44+00:00,APPROVED,
+ref(integrations): Add type annotations to Slack webhooks package,RyanSkonnord,2024-09-12 21:26:09+00:00,COMMENTED,I've commented on the nontrivial parts.
+ref(codeowners): Add entry for uptime alerts,evanpurkhiser,2024-09-13 18:00:57+00:00,APPROVED,
+ref(uptime): Refactor out UptimeAlertForm,evanpurkhiser,2024-09-13 18:01:19+00:00,APPROVED,
+ref(profiling) move source location to frame class,Zylphrex,2024-09-12 20:55:33+00:00,APPROVED,
+chore(sentry-apps): log timed out url,sentaur-athena,2024-09-12 20:51:00+00:00,APPROVED,
+ref: make silo_mode parametrize determinstic,markstory,2024-09-13 13:34:04+00:00,APPROVED,
+feat(replay): Replay web vitals tooltip,michellewzhang,2024-09-12 20:40:54+00:00,APPROVED,
+ref(uptime): Improve rdap data entity usage,wedamija,2024-09-12 21:50:12+00:00,APPROVED,
+feat(uptime): Add option to restrict issue creation via host id,wedamija,2024-09-12 21:55:21+00:00,APPROVED,
+ref(uptime): Remove old whois columns (db),wedamija,2024-09-12 21:55:52+00:00,APPROVED,
+ref(py): Make withs in test_results_consumers easier to read,asottile-sentry,2024-09-12 20:23:38+00:00,APPROVED,"
+
+![](https://i.fluffy.cc/txmjpfs0Svcz29tn0vtDVvLR0KhWh82h.gif)"
+feat(spans): Add a way to query numeric spans,github-advanced-security[bot],2024-09-12 20:25:22+00:00,COMMENTED,
+ref(uptime): Remove old whois columns (state),markstory,2024-09-12 20:23:54+00:00,APPROVED,
+feat(insights): Tokenize and format MongoDB queries in the table,mjq,2024-09-13 17:10:19+00:00,CHANGES_REQUESTED,"Thanks! Beyond a couple nits, my more substantive suggestions are:
+* try/catching the JSON parsing
+* handling arrays in arrays (at least so they don't fail, if you want to delay the format restructuring to a later PR)"
+feat(uptime): Better names for uptme rdap columns,wedamija,2024-09-12 18:56:30+00:00,APPROVED,
+ref(grouping): Remove variants from CalculatedHashes,armenzg,2024-09-13 15:14:27+00:00,COMMENTED,
+ref(js): Remove new legacy react-router import,michellewzhang,2024-09-12 18:51:19+00:00,APPROVED,
+ref: upgrade python to 3.12.6,joshuarli,2024-09-13 19:39:28+00:00,APPROVED,
+feat(rr6): Parameterize redirect to path,scttcper,2024-09-12 18:44:32+00:00,APPROVED,
+fix(rr6): Correct onboarding route specificity,scttcper,2024-09-12 20:32:46+00:00,APPROVED,
+fix(spans): Convert sampling weight to uint64,colin-sentry,2024-09-12 18:32:44+00:00,APPROVED,
+feat(spans): add span_id field,Zylphrex,2024-09-12 18:27:21+00:00,APPROVED,
+Update alerts.html,Jeffreyhung,2024-09-12 20:39:44+00:00,APPROVED,
+chore(issues): Remove feedback button from highlights,JoshFerge,2024-09-12 18:16:04+00:00,APPROVED,
+ref(grouping): Remove CalculatedHashes,armenzg,2024-09-12 18:02:29+00:00,COMMENTED,
+fix(jira): Ensures metrics/logs are captured for all issue creation exceptions,cathteng,2024-09-12 20:35:10+00:00,APPROVED,👀 
+feat(query-builder): Add unsubmitted search indicator,MichaelSun48,2024-09-12 17:36:54+00:00,APPROVED,
+fix(dashboards): make card headings bold,gggritso,2024-09-12 16:51:40+00:00,COMMENTED,LGTM except don't forget to also update https://github.com/getsentry/sentry/blob/e5db136b11a20d7ceb376c3456cb2f1fb7ed5255/static/app/views/dashboards/metrics/widgetCard.tsx#L277
+typing(models): Type event store models,armenzg,2024-09-12 16:47:45+00:00,COMMENTED,
+chore(sentry-apps): add instrumentation for sentry-app-components endpoint,sentaur-athena,2024-09-12 17:07:09+00:00,APPROVED,
+ref(similarity): Add snuba exception to retry after delay in backfill,JoshFerge,2024-09-13 17:14:19+00:00,APPROVED,
+fix(integrations): restore `code` for sentryapp installation webhooks,sentaur-athena,2024-09-12 16:40:16+00:00,APPROVED,
+chore(dashboards): Reduce `AutoSizedText` iteration limit,nikkikapadia,2024-09-12 18:27:04+00:00,APPROVED,
+fix(explore): No event id on EAP,Abdkhan14,2024-09-12 15:41:47+00:00,APPROVED,
+fix(replay): CLS score is not in ms,k-fish,2024-09-12 15:34:07+00:00,COMMENTED,
+chore: Remove spans used to debug ratelimit overhead,shellmayr,2024-09-12 15:43:09+00:00,APPROVED,
+fix(dashboards): Use custom cell renderer in `DiscoverTable`,edwardgou-sentry,2024-09-12 14:51:54+00:00,APPROVED,nice
+ref: upgrade djangorestframework-stubs,joshuarli,2024-09-12 17:03:12+00:00,APPROVED,
+fix(flags): Wrap flags in an object,c298lee,2024-09-12 15:02:37+00:00,APPROVED,

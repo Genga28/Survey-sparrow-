@@ -1,0 +1,101 @@
+author,created_at,merged_at,title,state
+evanpurkhiser,2024-09-14 00:33:32+00:00,,feat(uptime): Fetch rdap after subscription creation,open
+michellewzhang,2024-09-13 23:50:57+00:00,,feat(flags): attach flags in sentry's frontend to events,open
+aliu39,2024-09-13 23:44:10+00:00,,feat(analytics): add a debounced trackAnalytics util/hook,open
+scttcper,2024-09-13 23:04:38+00:00,,"feat(issues): Add inline preview to attachments, refactor attachments",open
+scttcper,2024-09-13 23:00:32+00:00,2024-09-13 23:15:10+00:00,fix(issues): Align streamlined event id,closed
+ameliahsu,2024-09-13 22:40:42+00:00,,feat(invite-members): updated invite modal layout and copy/paste functionality,open
+mrduncan,2024-09-13 22:39:55+00:00,,chore(issues): Move issues endpoints to issues,open
+MichaelSun48,2024-09-13 22:16:35+00:00,2024-09-13 23:43:33+00:00,fix(custom-views): Align hover state of overflow menu with add view button,closed
+MichaelSun48,2024-09-13 21:59:46+00:00,,feat(custom-views): Don't show tab dividers next to hovering tabs ,open
+scttcper,2024-09-13 21:56:21+00:00,,feat(onboarding): Avoid `new URL` for onboarding app routing,open
+mrduncan,2024-09-13 21:55:57+00:00,2024-09-13 22:09:50+00:00,fix(issues): Fix incorrect API docs for statsPeriod,closed
+jangjodi,2024-09-13 21:53:52+00:00,2024-09-13 22:40:13+00:00,fix(similarity): Return failure reason from multithread seer call,closed
+Christinarlong,2024-09-13 21:26:46+00:00,,ref(sentry_apps): move sentryapp model to sentry_apps dir,open
+scttcper,2024-09-13 21:18:33+00:00,2024-09-13 22:20:02+00:00,fix(ui): Remove team slug from settings search,closed
+scttcper,2024-09-13 21:08:55+00:00,2024-09-13 22:36:17+00:00,test(performance): Rearrange trace keyboard test,closed
+evanpurkhiser,2024-09-13 21:03:32+00:00,,feat(uptime): Add fetch_subscription_rdap_info task,open
+joshuarli,2024-09-13 20:47:01+00:00,,fix: devenv import error for python upgrade,open
+scttcper,2024-09-13 20:23:51+00:00,2024-09-13 20:45:35+00:00,fix(onboarding): Open replay panel in quick start action,closed
+aliu39,2024-09-13 20:22:58+00:00,,ref(feedback): disallow shimming reports w/missing event,open
+malwilley,2024-09-13 20:16:56+00:00,,fix(query-builder): Stop text from being overwritten when pasting,open
+MichaelSun48,2024-09-13 20:14:22+00:00,2024-09-13 20:27:56+00:00,fix(custom-views): Change cursor for tab to pointer everywhere,closed
+Zylphrex,2024-09-13 20:10:30+00:00,,feat(explore): New search query builder using eap,open
+asottile-sentry,2024-09-13 20:09:58+00:00,,ref: add warmup to wsgi,open
+Zylphrex,2024-09-13 20:07:37+00:00,,feat(eap): Use RPC to fetch tag values,open
+cmanallen,2024-09-13 20:06:36+00:00,,feat(replays): Pack video and recording data into the same payload,open
+edwardgou-sentry,2024-09-13 20:06:27+00:00,,fix(insights): Fixes Alerts from Queries module charts not always having accurate filters,open
+edwardgou-sentry,2024-09-13 20:04:46+00:00,,"feat(insights): Updates the Insights to create Alert flow to propagate the environment, timerange, and chart name whenever possible",open
+isabellaenriquez,2024-09-13 20:01:51+00:00,2024-09-13 20:57:35+00:00,chore(apidocs): Fix inconsistencies in replay docs,closed
+isabellaenriquez,2024-09-13 19:46:03+00:00,2024-09-13 20:49:20+00:00,chore(apidocs): id -> ID,closed
+isabellaenriquez,2024-09-13 19:41:55+00:00,2024-09-13 20:30:01+00:00,chore(apidocs): Make UserRole related endpoints private,closed
+isabellaenriquez,2024-09-13 19:36:18+00:00,,chore(apidocs): Add example for Retrieve an Organization Member,open
+iamrajjoshi,2024-09-13 19:20:36+00:00,,:wrench: chore(discord): Remove validate user Option,open
+Christinarlong,2024-09-13 19:03:42+00:00,2024-09-13 21:00:39+00:00,chore(users): Move User base endpoint file to users directory,closed
+mifu67,2024-09-13 19:01:45+00:00,2024-09-13 20:42:27+00:00,fix(anomaly detection): update alert list status to be the same as details page,closed
+MichaelSun48,2024-09-13 18:58:44+00:00,2024-09-13 19:34:52+00:00,chore(crons): Remove sentry monitor decorator from run_escalating_forecast job,closed
+mifu67,2024-09-13 18:55:49+00:00,2024-09-13 22:31:07+00:00,fix(anomaly detection): get aggregation key from snuba data,closed
+evanpurkhiser,2024-09-13 18:53:58+00:00,2024-09-13 19:17:11+00:00,ref(js): Missed one DateTime defualt export,closed
+armenzg,2024-09-13 18:34:37+00:00,,drop(grouping): A few more post-hierarchical code removals,open
+evanpurkhiser,2024-09-13 18:28:44+00:00,,ref(uptime): Include host_provider_id in restricted_by_provider metric,open
+evanpurkhiser,2024-09-13 18:26:33+00:00,2024-09-13 18:40:25+00:00,ref(js): Remove usage of DateTime default export,closed
+evanpurkhiser,2024-09-13 18:22:13+00:00,2024-09-13 20:41:23+00:00,ref(js): Remove default export of DateTime,closed
+evanpurkhiser,2024-09-13 18:18:10+00:00,2024-09-13 18:31:53+00:00,fix(ui): Inmprove spacing on code snippet header,closed
+sentaur-athena,2024-09-13 18:16:59+00:00,,feat(auth): add org level api access,open
+armenzg,2024-09-13 18:14:47+00:00,,typing(grouping): Add more modules into stronger typing,open
+michellewzhang,2024-09-13 18:08:13+00:00,2024-09-13 22:01:30+00:00,analytics(flags): add initial analytics,closed
+michellewzhang,2024-09-13 17:53:11+00:00,2024-09-13 19:01:38+00:00,feat(flags): hide flags from context and add feedback button,closed
+evanpurkhiser,2024-09-13 17:51:12+00:00,2024-09-13 18:11:13+00:00,ref(rr6): Restrict import from react-router,closed
+malwilley,2024-09-13 17:29:35+00:00,,feat(query-builder): Allow keys to be edited,open
+0Calories,2024-09-13 17:23:02+00:00,2024-09-13 18:12:50+00:00,chore(insights): Change copy for query not found message in MongoDB queries,closed
+michellewzhang,2024-09-13 17:10:16+00:00,2024-09-13 18:10:16+00:00,ref(feedback): rm duplicate line,closed
+asottile-sentry,2024-09-13 17:04:23+00:00,2024-09-13 17:41:21+00:00,ref: fix process consumer test,closed
+evanpurkhiser,2024-09-13 16:52:25+00:00,2024-09-13 18:01:55+00:00,feat(rr6): Add reactRouterVersion to 'Route Not Found' errors,closed
+asottile-sentry,2024-09-13 16:45:17+00:00,2024-09-13 17:22:09+00:00,ref: fix test pollution in test_rdap,closed
+0Calories,2024-09-13 16:40:40+00:00,2024-09-13 18:12:58+00:00,chore(insights): Adjust copy of queries search placeholder text,closed
+markstory,2024-09-13 16:10:42+00:00,,chore: Move deletion tasks to be co-located with the rest of deletions,open
+asottile-sentry,2024-09-13 15:59:46+00:00,2024-09-13 19:40:23+00:00,ref: fix test pollution integrity errors due to cache leaks between tests,closed
+edwardgou-sentry,2024-09-13 15:53:52+00:00,2024-09-13 17:16:40+00:00,feat(discover): Adds sum min and max to gauge metrics in discover,closed
+jangjodi,2024-09-13 15:21:57+00:00,2024-09-13 20:35:54+00:00,chore(similarity): Increase seer delay and add to log,closed
+Zylphrex,2024-09-13 14:21:24+00:00,2024-09-13 17:28:34+00:00,chore(deps): Bump sentry-protos to 0.1.21,closed
+priscilawebdev,2024-09-13 13:14:39+00:00,,feat(link-utils): Add validate link exists function,open
+priscilawebdev,2024-09-13 12:43:15+00:00,,feat(hook): Introduce useHasMounted hook,open
+shruthilayaj,2024-09-13 11:55:25+00:00,2024-09-13 14:05:33+00:00,chore(discover): Swallow invalid query errors,closed
+priscilawebdev,2024-09-13 11:41:17+00:00,,ref(whats-new): Move the logic to update internal seen state,open
+priscilawebdev,2024-09-13 08:49:16+00:00,2024-09-13 09:04:01+00:00,ref(whats-new): Remove green badge,closed
+obostjancic,2024-09-13 07:42:07+00:00,,feat(onboarding): pass project slug to wizard,open
+mifu67,2024-09-12 23:59:38+00:00,2024-09-13 16:19:31+00:00,fix(anomaly detection): add insights metrics to allow list,closed
+RyanSkonnord,2024-09-12 23:07:36+00:00,,ref(integrations): Extract dialog helper class from SlackActionEndpoint,open
+JoshFerge,2024-09-12 22:50:21+00:00,,fix(releases): use get_or_create instead of sub transaction,open
+davidenwang,2024-09-12 22:46:29+00:00,,ref(alerts): Remove usage of <Teams> in favor of useUserTeams(),open
+Zylphrex,2024-09-12 22:44:28+00:00,2024-09-13 14:18:04+00:00,fix(explore): Allow deleting last selected group by,closed
+davidenwang,2024-09-12 22:36:48+00:00,,ref(alerts): Convert create.tsx to FC,open
+ceorourke,2024-09-12 21:55:31+00:00,2024-09-13 18:28:23+00:00,ref(alerts): Update _get_start_and_end_indices,closed
+saponifi3d,2024-09-12 21:46:52+00:00,,Add DataConditions for workflow_engine,open
+MichaelSun48,2024-09-12 21:35:35+00:00,2024-09-12 21:49:53+00:00,fix(custom-views): Fixes page filters getting reset when naving to issues/,closed
+Zylphrex,2024-09-12 21:20:25+00:00,,ref(spans): Lift tag loading out of SpanSearchQueryBuilder,closed
+RyanSkonnord,2024-09-12 21:11:20+00:00,,ref(integrations): Add type annotations to Slack webhooks package,open
+davidenwang,2024-09-12 21:09:39+00:00,,ref(codeowners): Add entry for uptime alerts,open
+davidenwang,2024-09-12 20:56:04+00:00,,ref(uptime): Refactor out UptimeAlertForm,open
+JonasBa,2024-09-12 20:53:09+00:00,,ref(profiling) move source location to frame class,open
+cathteng,2024-09-12 20:46:51+00:00,2024-09-12 21:29:29+00:00,chore(sentry-apps): log timed out url,closed
+snigdhas,2024-09-12 20:39:21+00:00,,fix(substatus): Add check constraint for Group.substatus,open
+asottile-sentry,2024-09-12 20:33:09+00:00,2024-09-13 13:34:05+00:00,ref: make silo_mode parametrize determinstic,closed
+c298lee,2024-09-12 20:32:38+00:00,2024-09-13 15:42:58+00:00,feat(replay): Replay web vitals tooltip,closed
+evanpurkhiser,2024-09-12 20:32:31+00:00,2024-09-13 18:01:45+00:00,ref(uptime): Improve rdap data entity usage,closed
+evanpurkhiser,2024-09-12 20:28:00+00:00,2024-09-13 18:11:32+00:00,feat(uptime): Add option to restrict issue creation via host id,closed
+evanpurkhiser,2024-09-12 20:24:36+00:00,2024-09-13 18:01:31+00:00,ref(uptime): Remove old whois columns (db),closed
+evanpurkhiser,2024-09-12 20:22:54+00:00,2024-09-12 20:59:46+00:00,ref(py): Make withs in test_results_consumers easier to read,closed
+wmak,2024-09-12 20:20:20+00:00,,feat(spans): Add a way to query numeric spans,open
+evanpurkhiser,2024-09-12 19:46:09+00:00,2024-09-12 20:24:14+00:00,ref(uptime): Remove old whois columns (state),closed
+armenzg,2024-09-12 19:13:14+00:00,,ref(grouping): Remove CalculatedHashes,open
+0Calories,2024-09-12 18:57:53+00:00,,feat(insights): Tokenize and format MongoDB queries in the table,open
+evanpurkhiser,2024-09-12 18:54:26+00:00,2024-09-12 19:41:56+00:00,feat(uptime): Better names for uptme rdap columns,closed
+MichaelSun48,2024-09-12 18:51:02+00:00,,copy(activity): Improve copy for linked Azure Devops issue,open
+armenzg,2024-09-12 18:50:28+00:00,,ref(grouping): Remove variants from CalculatedHashes,open
+evanpurkhiser,2024-09-12 18:48:45+00:00,2024-09-12 19:10:40+00:00,ref(js): Remove new legacy react-router import,closed
+asottile-sentry,2024-09-12 18:44:03+00:00,,ref: upgrade python to 3.12.6,open
+evanpurkhiser,2024-09-12 18:43:01+00:00,2024-09-12 18:57:33+00:00,feat(rr6): Parameterize redirect to path,closed
+evanpurkhiser,2024-09-12 18:33:33+00:00,2024-09-12 20:32:48+00:00,fix(rr6): Correct onboarding route specificity,closed
+wmak,2024-09-12 18:30:15+00:00,2024-09-12 19:05:27+00:00,fix(spans): Convert sampling weight to uint64,closed
+wmak,2024-09-12 18:26:46+00:00,2024-09-12 19:04:18+00:00,feat(spans): add span_id field,closed
